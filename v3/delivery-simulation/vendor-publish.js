@@ -3,9 +3,9 @@ dotenv.config()
 const TOPIC = process.env.TOPIC;
 // Import required AWS SDK clients and commands for Node.js
 import {PublishCommand } from "@aws-sdk/client-sns";
-import {snsClient } from "./sns-client.js";
+import {snsClient } from "../sns-client.js";
 
-import { generateMessage } from "./message-generator.js";
+import { generateMessage } from "../message-generator.js";
 
 const topic = TOPIC;
 // Set the parameters
@@ -38,5 +38,5 @@ const run = async (vendorQueueARN) => {
     console.log("Error", err.stack);
   }
 };
-run("ARN-D123");
 
+export default run

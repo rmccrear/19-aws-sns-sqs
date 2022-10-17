@@ -6,6 +6,10 @@
   "type": "module",
   "scripts": {
     "sns-publish": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node sns-publish.js --profile base",
+    "sns-consume": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node sqs-consumer.js --profile base",
+    "vendor-1-publish": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/vendor-1-publish.js --profile base",
+    "vendor-2-publish": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/vendor-2-publish.js --profile base",
+    "delivery-driver-respond": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/delivery-driver-respond.js --profile base",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-sns": "^3.188.0",
+    "@aws-sdk/client-sqs": "^3.188.0",
     "chance": "^1.1.8",
     "dotenv": "^16.0.3"
   }

@@ -18,16 +18,22 @@ This is a demo of how to use SNS and SQS to make a dispatch system. In our model
 
 ## How to run
 
+### publishing to an sns topic
+
 Running the v3/sns-publish.js file will publish an SNS message to a FIFO queue on AWS. It can be run from the v3 directory.
 
     cd v3
     npm install
     npm run sns-publish
 
-This will publish a message to a topic. The topic is subcribed to by a FIFO queue. In this pipeline, all messages will be deduplicated automatically by the service. The message is a delivery notice for an imaginary delivery driver in our scheme. The message will be of this form:
+This will publish a message to a topic. The topic is subcribed to by a FIFO queue. In this pipeline, all messages will be deduplicated automatically by the service. The message is a delivery notice for an imaginary delivery driver in our scheme. The message will be a `stringified` version of this form:
 
     {
         orderId: "1234",
         vendorId: "ARN-of-vendor-queue",
         customer: "name of customer"
     }
+
+### consuming messages from an SQS FIFO queue
+
+The v3/sqs-subscriber.js file will run a script that will consume messages from the topic that was just published. 
