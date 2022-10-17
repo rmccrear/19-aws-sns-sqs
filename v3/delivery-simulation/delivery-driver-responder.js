@@ -25,7 +25,11 @@ const respond = async (incomingMessage) => {
     customer,
     orderId
   }
+  // Set the TopicArn to the vendorId
   const params = generateParams(JSON.stringify(response), vendorId);
+  console.log(`Sending response to: ${vendorId}`);
+  //console.log(`Sending response to: ${process.env.VENDOR_1_QUEUE_URL}`);
+  // const params = generateParams(JSON.stringify(response), process.env.VENDOR_1_QUEUE_URL);
   try {
     const data = await snsClient.send(new PublishCommand(params));
     console.log("Success.",  data);

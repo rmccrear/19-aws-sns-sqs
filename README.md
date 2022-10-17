@@ -36,4 +36,4 @@ This will publish a message to a topic. The topic is subcribed to by a FIFO queu
 
 ### consuming messages from an SQS FIFO queue
 
-The v3/sqs-subscriber.js file will run a script that will consume messages from the topic that was just published. 
+The v3/sqs-subscriber.js file will run a script that will consume messages from the topic that was just published.  

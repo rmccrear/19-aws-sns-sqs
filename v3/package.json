@@ -9,6 +9,8 @@
     "sns-consume": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node sqs-consumer.js --profile base",
     "vendor-1-publish": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/vendor-1-publish.js --profile base",
     "vendor-2-publish": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/vendor-2-publish.js --profile base",
+    "vendor-1-check-status": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/vendor-1-check-status.js --profile base",
+    "vendor-2-check-status": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/vendor-2-check-status.js --profile base",
     "delivery-driver-respond": "AWS_SDK_LOAD_CONFIG=1 AWS_PROFILE=base node delivery-simulation/delivery-driver-respond.js --profile base",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
